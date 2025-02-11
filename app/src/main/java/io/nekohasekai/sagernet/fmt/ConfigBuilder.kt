@@ -4,6 +4,7 @@ import android.widget.Toast
 import io.nekohasekai.sagernet.*
 import io.nekohasekai.sagernet.bg.VpnService
 import io.nekohasekai.sagernet.database.DataStore
+import io.nekohasekai.sagernet.database.ProfileManager
 import io.nekohasekai.sagernet.database.ProxyEntity
 import io.nekohasekai.sagernet.database.ProxyEntity.Companion.TYPE_CONFIG
 import io.nekohasekai.sagernet.database.SagerDatabase
@@ -113,8 +114,8 @@ fun buildConfig(
 
     fun ProxyEntity.resolveChain(): MutableList<ProxyEntity> {
         val thisGroup = SagerDatabase.groupDao.getById(groupId)
-        val frontProxy = thisGroup?.frontProxy?.let { SagerDatabase.proxyDao.getById(it) }
-        val landingProxy = thisGroup?.landingProxy?.let { SagerDatabase.proxyDao.getById(it) }
+        val frontProxy = thisGroup?.frontProxy?.let { ProfileManager.getProfile(it) }
+        val landingProxy = thisGroup?.landingProxy?.let { ProfileManager.getProfile(it) }
         val list = resolveChainInternal()
         if (frontProxy != null) {
             list.add(frontProxy)

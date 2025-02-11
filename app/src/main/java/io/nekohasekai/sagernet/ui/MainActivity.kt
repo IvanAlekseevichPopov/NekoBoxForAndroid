@@ -9,6 +9,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.RemoteException
+import android.util.Log
 import android.view.KeyEvent
 import android.view.MenuItem
 import androidx.activity.addCallback
@@ -37,7 +38,6 @@ import io.nekohasekai.sagernet.group.GroupUpdater
 import io.nekohasekai.sagernet.ktx.*
 import io.nekohasekai.sagernet.widget.ListHolderListener
 import moe.matsuri.nb4a.utils.Util
-import java.util.*
 
 class MainActivity : ThemedActivity(),
     SagerConnection.Callback,
@@ -80,9 +80,11 @@ class MainActivity : ThemedActivity(),
         }
 
         binding.fab.setOnClickListener {
-            if (DataStore.serviceState.canStop) SagerNet.stopService() else connect.launch(
-                null
-            )
+            if (DataStore.serviceState.canStop) {
+                SagerNet.stopService()
+            } else {
+                connect.launch(null)
+            }
         }
         binding.stats.setOnClickListener { if (DataStore.serviceState.connected) binding.stats.testConnection() }
 
@@ -108,6 +110,21 @@ class MainActivity : ThemedActivity(),
                 ActivityCompat.requestPermissions(
                     this@MainActivity, arrayOf(POST_NOTIFICATIONS), 0
                 )
+            }
+        }
+
+        createDefaultProfile();
+    }
+
+    private fun createDefaultProfile() {
+        runOnDefaultDispatcher {
+            val profile = ProfileManager.getDefaultProfile()
+            Log.e(null, profile.toString());
+            if (profile == null) {
+                Log.e(null, "Profile not exist. Creating new one");
+                val parse =
+                    Uri.parse("vless://5e676b91-3e30-45df-96b5-b4c6b943c4fe@v20847.hosted-by-vdsina.com:443?type=tcp&security=reality&pbk=xp4QTtjJMz-oSzy3hhh79ECL3X4NMHq3UXiU8SNMOQ0&fp=chrome&sni=v20847.hosted-by-vdsina.com&sid=5a8896a3&spx=%2F&flow=xtls-rprx-vision#test")
+                importDefaultProfile(parse);
             }
         }
     }
@@ -198,7 +215,24 @@ class MainActivity : ThemedActivity(),
         GroupUpdater.startUpdate(subscription, true)
     }
 
+    private suspend fun importDefaultProfile(uri: Uri) {
+        Log.e(null, uri.toString())
+        val profile = try {
+            parseProxies(uri.toString()).getOrNull(0) ?: error(getString(R.string.no_proxies_found))
+        } catch (e: Exception) {
+            onMainDispatcher {
+                alert(e.readableMessage).show()
+            }
+            return
+        }
+        runOnDefaultDispatcher {
+            finishImportProfile(profile)
+        }
+    }
+
+    @Deprecated("Used to import profiles manually. No need anymore")
     suspend fun importProfile(uri: Uri) {
+        Log.e(null, uri.toString())
         val profile = try {
             parseProxies(uri.toString()).getOrNull(0) ?: error(getString(R.string.no_proxies_found))
         } catch (e: Exception) {
@@ -230,7 +264,7 @@ class MainActivity : ThemedActivity(),
         onMainDispatcher {
             displayFragmentWithId(R.id.nav_configuration)
 
-            snackbar(resources.getQuantityString(R.plurals.added, 1, 1)).show()
+//            snackbar(resources.getQuantityString(R.plurals.added, 1, 1)).show()
         }
     }
 
