@@ -9,10 +9,12 @@
 
         <item
             android:id="@+id/nav_group"
+            android:visible="false"
             android:icon="@drawable/ic_baseline_view_list_24"
             android:title="@string/menu_group" />
 
         <item
+            android:visible="false"
             android:id="@+id/nav_route"
             android:icon="@drawable/ic_maps_directions"
             android:title="@string/menu_route" />
@@ -36,6 +38,7 @@
             android:title="@string/menu_dashboard" />
         <item
             android:id="@+id/nav_tools"
+            android:visible="false"
             android:icon="@drawable/baseline_construction_24"
             android:title="@string/menu_tools" />
     </group>
@@ -45,10 +48,12 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_tuiguang"
+            android:visible="false"
             android:icon="@drawable/ic_social_share"
             android:title="@string/ads" />
         <item
             android:id="@+id/nav_faq"
+            android:visible="false"
             android:icon="@drawable/ic_device_data_usage"
             android:title="@string/document" />
         <item
