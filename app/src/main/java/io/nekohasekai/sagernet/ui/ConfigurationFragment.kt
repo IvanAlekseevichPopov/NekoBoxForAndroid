@@ -133,8 +133,9 @@ class ConfigurationFragment @JvmOverloads constructor(
         super.onViewCreated(view, savedInstanceState)
 
         if (!select) {
-            toolbar.inflateMenu(R.menu.add_profile_menu)
-            toolbar.setOnMenuItemClickListener(this)
+//             Right up buttons with context menu
+//            toolbar.inflateMenu(R.menu.add_profile_menu)
+//            toolbar.setOnMenuItemClickListener(this)
         } else {
             toolbar.setTitle(titleRes)
             toolbar.setNavigationIcon(R.drawable.ic_navigation_close)
@@ -1087,47 +1088,47 @@ class ConfigurationFragment @JvmOverloads constructor(
             if (select) return
 
             val pf = requireParentFragment() as? ToolbarFragment ?: return
-            val menu = pf.toolbar.menu
-            val origin = menu.findItem(R.id.action_order_origin)
-            val byName = menu.findItem(R.id.action_order_by_name)
-            val byDelay = menu.findItem(R.id.action_order_by_delay)
-            when (proxyGroup.order) {
-                GroupOrder.ORIGIN -> {
-                    origin.isChecked = true
-                }
+//            val menu = pf.toolbar.menu
+//            val origin = menu.findItem(R.id.action_order_origin)
+//            val byName = menu.findItem(R.id.action_order_by_name)
+//            val byDelay = menu.findItem(R.id.action_order_by_delay)
+//            when (proxyGroup.order) {
+//                GroupOrder.ORIGIN -> {
+//                    origin.isChecked = true
+//                }
+//
+//                GroupOrder.BY_NAME -> {
+//                    byName.isChecked = true
+//                }
+//
+//                GroupOrder.BY_DELAY -> {
+//                    byDelay.isChecked = true
+//                }
+//            }
 
-                GroupOrder.BY_NAME -> {
-                    byName.isChecked = true
-                }
+//            fun updateTo(order: Int) {
+//                if (proxyGroup.order == order) return
+//                runOnDefaultDispatcher {
+//                    proxyGroup.order = order
+//                    GroupManager.updateGroup(proxyGroup)
+//                }
+//            }
 
-                GroupOrder.BY_DELAY -> {
-                    byDelay.isChecked = true
-                }
-            }
-
-            fun updateTo(order: Int) {
-                if (proxyGroup.order == order) return
-                runOnDefaultDispatcher {
-                    proxyGroup.order = order
-                    GroupManager.updateGroup(proxyGroup)
-                }
-            }
-
-            origin.setOnMenuItemClickListener {
-                it.isChecked = true
-                updateTo(GroupOrder.ORIGIN)
-                true
-            }
-            byName.setOnMenuItemClickListener {
-                it.isChecked = true
-                updateTo(GroupOrder.BY_NAME)
-                true
-            }
-            byDelay.setOnMenuItemClickListener {
-                it.isChecked = true
-                updateTo(GroupOrder.BY_DELAY)
-                true
-            }
+//            origin.setOnMenuItemClickListener {
+//                it.isChecked = true
+//                updateTo(GroupOrder.ORIGIN)
+//                true
+//            }
+//            byName.setOnMenuItemClickListener {
+//                it.isChecked = true
+//                updateTo(GroupOrder.BY_NAME)
+//                true
+//            }
+//            byDelay.setOnMenuItemClickListener {
+//                it.isChecked = true
+//                updateTo(GroupOrder.BY_DELAY)
+//                true
+//            }
         }
 
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -12,6 +12,7 @@ import android.os.RemoteException
 import android.util.Log
 import android.view.KeyEvent
 import android.view.MenuItem
+import android.view.View
 import androidx.activity.addCallback
 import androidx.annotation.IdRes
 import androidx.core.app.ActivityCompat
@@ -132,7 +133,7 @@ class MainActivity : ThemedActivity(),
     fun refreshNavMenu(clashApi: Boolean) {
         if (::navigation.isInitialized) {
             navigation.menu.findItem(R.id.nav_traffic)?.isVisible = clashApi
-            navigation.menu.findItem(R.id.nav_tuiguang)?.isVisible = !isPlay
+//            navigation.menu.findItem(R.id.nav_tuiguang)?.isVisible = !isPlay
         }
     }
 
@@ -336,11 +337,11 @@ class MainActivity : ThemedActivity(),
     fun displayFragment(fragment: ToolbarFragment) {
         if (fragment is ConfigurationFragment) {
             binding.stats.allowShow = true
-            binding.fab.show()
+            binding.fab.visibility = View.VISIBLE
         } else if (!DataStore.showBottomBar) {
             binding.stats.allowShow = false
             binding.stats.performHide()
-            binding.fab.hide()
+            binding.fab.visibility = View.INVISIBLE
         }
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_holder, fragment)

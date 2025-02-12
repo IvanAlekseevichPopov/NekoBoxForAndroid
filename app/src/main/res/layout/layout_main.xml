@@ -42,7 +42,9 @@
             android:elevation="6dp"
             android:nextFocusDown="@+id/stats"
             app:backgroundTint="?fabColorBackground"
-            app:layout_anchor="@id/stats"
+            android:layout_gravity="center"
+            android:scaleX="2"
+            android:scaleY="2"
             app:pressedTranslationZ="6dp"
             app:srcCompat="@drawable/ic_service_idle" />
 

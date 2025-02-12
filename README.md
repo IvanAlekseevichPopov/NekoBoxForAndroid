@@ -84,4 +84,18 @@ Android GUI:
 
 Web Dashboard:
 - [Yacd-meta](https://github.com/MetaCubeX/Yacd-meta)
-CI test
+
+TODO
++Захардкодить конфигурацию внутри
+Сделать одну большую кнопку вкл/выкл вместо текущей страницы
++Выпилить все ненужные страницы
+сменить иконку кнопки вкл
+Переписать About
+Убрать опасные настройки
+заменить иконку в трее и в шторке
+Дать ссылку на репозиторий
+Переименовать все вхождения старого имени приложения
+
+тестовый релиз
+
+vless://5e676b91-3e30-45df-96b5-b4c6b943c4fe@v20847.hosted-by-vdsina.com:443?type=tcp&security=reality&pbk=xp4QTtjJMz-oSzy3hhh79ECL3X4NMHq3UXiU8SNMOQ0&fp=chrome&sni=v20847.hosted-by-vdsina.com&sid=5a8896a3&spx=%2F&flow=xtls-rprx-vision#test
