@@ -37,16 +37,19 @@
 
         <io.nekohasekai.sagernet.widget.ServiceButton
             android:id="@+id/fab"
+            tools:visibility="visible"
+            android:visibility="invisible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="6dp"
             android:nextFocusDown="@+id/stats"
             app:backgroundTint="?fabColorBackground"
+            android:tint="?colorMaterial300"
             android:layout_gravity="center"
             android:scaleX="2"
             android:scaleY="2"
             app:pressedTranslationZ="6dp"
-            app:srcCompat="@drawable/ic_service_idle" />
+            app:srcCompat="@drawable/ic_power" />
 
         <io.nekohasekai.sagernet.widget.StatsBar
             android:id="@+id/stats"
@@ -108,6 +111,7 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
+        tools:visibility="gone"
         style="@style/Widget.Design.NavigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -119,6 +123,7 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view_black"
+        tools:visibility="gone"
         style="@style/Widget.Design.NavigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

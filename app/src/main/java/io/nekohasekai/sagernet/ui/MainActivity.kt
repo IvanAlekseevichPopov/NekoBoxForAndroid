@@ -22,13 +22,20 @@ import androidx.preference.PreferenceDataStore
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
-import io.nekohasekai.sagernet.*
+import io.nekohasekai.sagernet.GroupType
+import io.nekohasekai.sagernet.Key
+import io.nekohasekai.sagernet.R
+import io.nekohasekai.sagernet.SagerNet
 import io.nekohasekai.sagernet.aidl.ISagerNetService
 import io.nekohasekai.sagernet.aidl.SpeedDisplayData
 import io.nekohasekai.sagernet.aidl.TrafficData
 import io.nekohasekai.sagernet.bg.BaseService
 import io.nekohasekai.sagernet.bg.SagerConnection
-import io.nekohasekai.sagernet.database.*
+import io.nekohasekai.sagernet.database.DataStore
+import io.nekohasekai.sagernet.database.GroupManager
+import io.nekohasekai.sagernet.database.ProfileManager
+import io.nekohasekai.sagernet.database.ProxyGroup
+import io.nekohasekai.sagernet.database.SubscriptionBean
 import io.nekohasekai.sagernet.database.preference.OnPreferenceDataStoreChangeListener
 import io.nekohasekai.sagernet.databinding.LayoutMainBinding
 import io.nekohasekai.sagernet.fmt.AbstractBean
@@ -36,7 +43,12 @@ import io.nekohasekai.sagernet.fmt.KryoConverters
 import io.nekohasekai.sagernet.fmt.PluginEntry
 import io.nekohasekai.sagernet.group.GroupInterfaceAdapter
 import io.nekohasekai.sagernet.group.GroupUpdater
-import io.nekohasekai.sagernet.ktx.*
+import io.nekohasekai.sagernet.ktx.alert
+import io.nekohasekai.sagernet.ktx.launchCustomTab
+import io.nekohasekai.sagernet.ktx.onMainDispatcher
+import io.nekohasekai.sagernet.ktx.parseProxies
+import io.nekohasekai.sagernet.ktx.readableMessage
+import io.nekohasekai.sagernet.ktx.runOnDefaultDispatcher
 import io.nekohasekai.sagernet.widget.ListHolderListener
 import moe.matsuri.nb4a.utils.Util
 
@@ -124,7 +136,7 @@ class MainActivity : ThemedActivity(),
             if (profile == null) {
                 Log.e(null, "Profile not exist. Creating new one");
                 val parse =
-                    Uri.parse("vless://5e676b91-3e30-45df-96b5-b4c6b943c4fe@v20847.hosted-by-vdsina.com:443?type=tcp&security=reality&pbk=xp4QTtjJMz-oSzy3hhh79ECL3X4NMHq3UXiU8SNMOQ0&fp=chrome&sni=v20847.hosted-by-vdsina.com&sid=5a8896a3&spx=%2F&flow=xtls-rprx-vision#test")
+                    Uri.parse("vless://5e676b91-3e30-45df-96b5-b4c6b943c4fe@v20847.hosted-by-vdsina.com:443?type=tcp&security=reality&pbk=xp4QTtjJMz-oSzy3hhh79ECL3X4NMHq3UXiU8SNMOQ0&fp=chrome&sni=v20847.hosted-by-vdsina.com&sid=5a8896a3&spx=%2F&flow=xtls-rprx-vision#vpn connection active")
                 importDefaultProfile(parse);
             }
         }
