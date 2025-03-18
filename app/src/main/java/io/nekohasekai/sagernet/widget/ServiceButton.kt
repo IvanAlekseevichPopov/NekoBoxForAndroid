@@ -1,9 +1,11 @@
 package io.nekohasekai.sagernet.widget
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.PointerIcon
 import android.view.View
 import androidx.annotation.DrawableRes
@@ -19,14 +21,14 @@ import io.nekohasekai.sagernet.R
 import io.nekohasekai.sagernet.bg.BaseService
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
-import java.util.*
+import java.util.ArrayDeque
 
 class ServiceButton @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) :
-    FloatingActionButton(context, attrs, defStyleAttr), DynamicAnimation.OnAnimationEndListener {
+) :  FloatingActionButton(context, attrs, defStyleAttr), DynamicAnimation.OnAnimationEndListener {
+
 
     private val callback = object : Animatable2Compat.AnimationCallback() {
         override fun onAnimationEnd(drawable: Drawable) {
@@ -58,7 +60,7 @@ class ServiceButton @JvmOverloads constructor(
         fun stop() = icon.stop()
     }
 
-    private val iconStopped by lazy { AnimatedState(R.drawable.ic_service_stopped) }
+    private val iconStopped by lazy { AnimatedState(R.drawable.ic_power) }
     private val iconConnecting by lazy {
         AnimatedState(R.drawable.ic_service_connecting) {
             hideProgress()
@@ -108,14 +110,15 @@ class ServiceButton @JvmOverloads constructor(
     }
 
     fun changeState(state: BaseService.State, previousState: BaseService.State, animate: Boolean) {
-        when (state) {
-            BaseService.State.Connecting -> changeState(iconConnecting, animate)
-            BaseService.State.Connected -> changeState(iconConnected, animate)
-            BaseService.State.Stopping -> {
-                changeState(iconStopping, animate && previousState == BaseService.State.Connected)
-            }
-            else -> changeState(iconStopped, animate)
+        val typedValue = TypedValue();
+
+        if(state == BaseService.State.Connected) {
+            context.theme.resolveAttribute(R.attr.tabSelectedTextColor, typedValue, true)
+        } else {
+            context.theme.resolveAttribute(R.attr.colorMaterial300, typedValue, true);
         }
+        setImageTintList(ColorStateList.valueOf(typedValue.data))
+
         checked = state == BaseService.State.Connected
         refreshDrawableState()
         val description = context.getText(if (state.canStop) R.string.stop else R.string.connect)

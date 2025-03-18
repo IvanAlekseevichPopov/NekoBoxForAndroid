@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_desc">زنجیره ابزار پروکسی جهانی برای اندروید، نوشته شده در کاتولین.</string>
     <string name="project">پروژه</string>
     <string name="github">کد منبع</string>
     <string name="telegram">کانال آپدیت تلگرام</string>

@@ -115,16 +115,35 @@ object ProfileManager {
         }
     }
 
-    fun getProfile(profileId: Long): ProxyEntity? {
-        if (profileId == 0L) return null
+    fun getDefaultProfile(): ProxyEntity? {
         return try {
-            SagerDatabase.proxyDao.getById(profileId)
+            return SagerDatabase.proxyDao.getLast()
         } catch (ex: SQLiteCantOpenDatabaseException) {
             throw IOException(ex)
         } catch (ex: SQLException) {
             Logs.w(ex)
             null
         }
+    }
+
+    @Deprecated(
+        "No need to use many profiles", ReplaceWith(
+            "getDefaultProfile()",
+            "io.nekohasekai.sagernet.database.ProfileManager.getDefaultProfile"
+        )
+    )
+    fun getProfile(profileId: Long): ProxyEntity? {
+        return getDefaultProfile();
+
+//        if (profileId == 0L) return null
+//        return try {
+//            SagerDatabase.proxyDao.getById(profileId)
+//        } catch (ex: SQLiteCantOpenDatabaseException) {
+//            throw IOException(ex)
+//        } catch (ex: SQLException) {
+//            Logs.w(ex)
+//            null
+//        }
     }
 
     fun getProfiles(profileIds: List<Long>): List<ProxyEntity> {

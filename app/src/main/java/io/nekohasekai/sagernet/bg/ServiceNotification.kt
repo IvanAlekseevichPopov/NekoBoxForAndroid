@@ -116,7 +116,7 @@ class ServiceNotification(
         .setContentTitle(title)
         .setOnlyAlertOnce(true)
         .setContentIntent(SagerNet.configureIntent(service))
-        .setSmallIcon(R.drawable.ic_service_active)
+        .setSmallIcon(R.drawable.shield_lock_24px)
         .setCategory(NotificationCompat.CATEGORY_SERVICE)
         .setPriority(if (visible) NotificationCompat.PRIORITY_LOW else NotificationCompat.PRIORITY_MIN)
 
@@ -158,12 +158,13 @@ class ServiceNotification(
             ).setShowsUserInterface(false).build()
             it.addAction(closeAction)
 
-            val switchAction = NotificationCompat.Action.Builder(
-                0, service.getString(R.string.action_switch), PendingIntent.getActivity(
-                    service, 0, Intent(service, SwitchActivity::class.java), flags
-                )
-            ).setShowsUserInterface(false).build()
-            it.addAction(switchAction)
+//           "Switch" button in notification panel
+//            val switchAction = NotificationCompat.Action.Builder(
+//                0, service.getString(R.string.action_switch), PendingIntent.getActivity(
+//                    service, 0, Intent(service, SwitchActivity::class.java), flags
+//                )
+//            ).setShowsUserInterface(false).build()
+//            it.addAction(switchAction)
 
             val resetUpstreamAction = NotificationCompat.Action.Builder(
                 0, service.getString(R.string.reset_connections),

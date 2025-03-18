@@ -96,7 +96,7 @@
     <string name="telegram">Канал обновлений в Telegram</string>
     <string name="github">Исходный код</string>
     <string name="project">Проект</string>
-    <string name="app_desc">Универсальный набор инструментов прокси для Android, написанный на Kotlin.</string>
+    <string name="app_desc">Простейшее приложение VPN из возможных.</string>
     <plurals name="added">
         <item quantity="one">Добавлен</item>
         <item quantity="few">Добавлено %d прокси</item>

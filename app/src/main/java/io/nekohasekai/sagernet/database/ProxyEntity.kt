@@ -480,6 +480,9 @@ data class ProxyEntity(
         @Query("SELECT * FROM proxy_entities WHERE id = :proxyId")
         fun getById(proxyId: Long): ProxyEntity?
 
+        @Query("SELECT * FROM proxy_entities LIMIT 1")
+        fun getLast(): ProxyEntity?
+
         @Query("DELETE FROM proxy_entities WHERE id IN (:proxyId)")
         fun deleteById(proxyId: Long): Int
 
