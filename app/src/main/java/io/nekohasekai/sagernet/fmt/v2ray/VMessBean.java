@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import org.jetbrains.annotations.NotNull;
 
 import io.nekohasekai.sagernet.fmt.KryoConverters;
-import moe.matsuri.nb4a.utils.JavaUtil;
+import moe.matsuri.safeSurfing.utils.JavaUtil;
 
 public class VMessBean extends StandardV2RayBean {
 

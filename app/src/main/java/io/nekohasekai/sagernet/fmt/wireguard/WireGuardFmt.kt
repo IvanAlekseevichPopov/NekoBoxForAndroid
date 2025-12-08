@@ -1,8 +1,8 @@
 package io.nekohasekai.sagernet.fmt.wireguard
 
-import moe.matsuri.nb4a.SingBoxOptions
-import moe.matsuri.nb4a.utils.Util
-import moe.matsuri.nb4a.utils.listByLineOrComma
+import moe.matsuri.safeSurfing.SingBoxOptions
+import moe.matsuri.safeSurfing.utils.Util
+import moe.matsuri.safeSurfing.utils.listByLineOrComma
 
 fun genReserved(anyStr: String): String {
     try {

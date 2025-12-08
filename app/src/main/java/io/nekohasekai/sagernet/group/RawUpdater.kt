@@ -21,9 +21,9 @@ import io.nekohasekai.sagernet.fmt.v2ray.setTLS
 import io.nekohasekai.sagernet.fmt.wireguard.WireGuardBean
 import io.nekohasekai.sagernet.ktx.*
 import libcore.Libcore
-import moe.matsuri.nb4a.Protocols
-import moe.matsuri.nb4a.proxy.config.ConfigBean
-import moe.matsuri.nb4a.utils.Util
+import moe.matsuri.safeSurfing.Protocols
+import moe.matsuri.safeSurfing.proxy.config.ConfigBean
+import moe.matsuri.safeSurfing.utils.Util
 import org.ini4j.Ini
 import org.json.JSONArray
 import org.json.JSONObject

@@ -4,9 +4,9 @@ import io.nekohasekai.sagernet.ktx.decodeBase64UrlSafe
 import io.nekohasekai.sagernet.ktx.toLink
 import io.nekohasekai.sagernet.ktx.unUrlSafe
 import io.nekohasekai.sagernet.ktx.urlSafe
-import moe.matsuri.nb4a.SingBoxOptions
-import moe.matsuri.nb4a.utils.NGUtil
-import moe.matsuri.nb4a.utils.Util
+import moe.matsuri.safeSurfing.SingBoxOptions
+import moe.matsuri.safeSurfing.utils.NGUtil
+import moe.matsuri.safeSurfing.utils.Util
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 

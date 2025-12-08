@@ -2,7 +2,7 @@ package io.nekohasekai.sagernet.fmt
 
 import io.nekohasekai.sagernet.database.ProxyEntity
 import io.nekohasekai.sagernet.database.ProxyGroup
-import moe.matsuri.nb4a.utils.Util
+import moe.matsuri.safeSurfing.utils.Util
 
 fun parseUniversal(link: String): AbstractBean {
     return if (link.contains("?")) {

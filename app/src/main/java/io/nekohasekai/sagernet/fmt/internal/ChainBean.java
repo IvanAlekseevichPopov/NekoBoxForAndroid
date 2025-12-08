@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.nekohasekai.sagernet.fmt.KryoConverters;
-import moe.matsuri.nb4a.utils.JavaUtil;
+import moe.matsuri.safeSurfing.utils.JavaUtil;
 
 public class ChainBean extends InternalBean {
 

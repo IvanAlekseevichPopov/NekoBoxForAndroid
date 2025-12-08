@@ -8,8 +8,8 @@ import io.nekohasekai.sagernet.ktx.Logs
 import io.nekohasekai.sagernet.ktx.runOnDefaultDispatcher
 import kotlinx.coroutines.runBlocking
 import libcore.Libcore
-import moe.matsuri.nb4a.net.LocalResolverImpl
-import moe.matsuri.nb4a.utils.JavaUtil
+import moe.matsuri.safeSurfing.net.LocalResolverImpl
+import moe.matsuri.safeSurfing.utils.JavaUtil
 
 class ProxyInstance(profile: ProxyEntity, var service: BaseService.Interface? = null) :
     BoxInstance(profile) {

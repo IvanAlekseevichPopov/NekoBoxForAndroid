@@ -34,7 +34,7 @@ import io.nekohasekai.sagernet.database.preference.PublicDatabase
 import io.nekohasekai.sagernet.ui.MainActivity
 import io.nekohasekai.sagernet.ui.ThemedActivity
 import kotlinx.coroutines.*
-import moe.matsuri.nb4a.utils.NGUtil
+import moe.matsuri.safeSurfing.utils.NGUtil
 import java.io.FileDescriptor
 import java.net.*
 import java.util.concurrent.atomic.AtomicBoolean

@@ -20,7 +20,7 @@ import io.nekohasekai.sagernet.ktx.string
 import io.nekohasekai.sagernet.ktx.stringSet
 import io.nekohasekai.sagernet.ktx.stringToInt
 import io.nekohasekai.sagernet.ktx.stringToIntIfExists
-import moe.matsuri.nb4a.TempDatabase
+import moe.matsuri.safeSurfing.TempDatabase
 
 object DataStore : OnPreferenceDataStoreChangeListener {
 

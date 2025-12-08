@@ -23,7 +23,7 @@ import io.nekohasekai.sagernet.databinding.LayoutBackupBinding
 import io.nekohasekai.sagernet.databinding.LayoutImportBinding
 import io.nekohasekai.sagernet.databinding.LayoutProgressBinding
 import io.nekohasekai.sagernet.ktx.*
-import moe.matsuri.nb4a.utils.Util
+import moe.matsuri.safeSurfing.utils.Util
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File

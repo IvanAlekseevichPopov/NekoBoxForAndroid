@@ -26,9 +26,9 @@ import io.nekohasekai.sagernet.utils.*
 import kotlinx.coroutines.DEBUG_PROPERTY_NAME
 import kotlinx.coroutines.DEBUG_PROPERTY_VALUE_ON
 import libcore.Libcore
-import moe.matsuri.nb4a.NativeInterface
-import moe.matsuri.nb4a.utils.JavaUtil
-import moe.matsuri.nb4a.utils.cleanWebview
+import moe.matsuri.safeSurfing.NativeInterface
+import moe.matsuri.safeSurfing.utils.JavaUtil
+import moe.matsuri.safeSurfing.utils.cleanWebview
 import java.io.File
 import androidx.work.Configuration as WorkConfiguration
 

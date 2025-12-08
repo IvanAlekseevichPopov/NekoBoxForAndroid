@@ -55,7 +55,7 @@ fun Project.requireFlavor(): String {
 fun Project.requireMetadata(): Properties {
     if (!::metadata.isInitialized) {
         metadata = Properties().apply {
-            load(rootProject.file("nb4a.properties").inputStream())
+            load(rootProject.file("safeSurfing.properties").inputStream())
         }
     }
     return metadata
@@ -95,10 +95,10 @@ fun Project.requireTargetAbi(): String {
 fun Project.setupCommon() {
     android.apply {
         buildToolsVersion = "30.0.3"
-        compileSdk = 33
+        compileSdk = 34
         defaultConfig {
             minSdk = 21
-            targetSdk = 33
+            targetSdk = 35
         }
         buildTypes {
             getByName("release") {
@@ -203,7 +203,8 @@ fun Project.setupAppCommon() {
 fun Project.setupApp() {
     val pkgName = requireMetadata().getProperty("PACKAGE_NAME")
     val verName = requireMetadata().getProperty("VERSION_NAME")
-    val verCode = (requireMetadata().getProperty("VERSION_CODE").toInt()) * 5
+//    val verCode = (requireMetadata().getProperty("VERSION_CODE").toInt()) * 5
+    val verCode = 68
     android.apply {
         defaultConfig {
             applicationId = pkgName
@@ -246,7 +247,7 @@ fun Project.setupApp() {
         applicationVariants.all {
             outputs.all {
                 this as BaseVariantOutputImpl
-                outputFileName = outputFileName.replace(project.name, "NB4A-$versionName")
+                outputFileName = outputFileName.replace(project.name, "SAFESURFING-$versionName")
                     .replace("-release", "")
                     .replace("-oss", "")
             }

@@ -18,11 +18,12 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.CAMERA" tools:node="remove" />
 
-    <uses-permission
-        android:name="android.permission.QUERY_ALL_PACKAGES"
-        tools:ignore="QueryAllPackagesPermission" />
-    <uses-permission android:name="android.permission.CAMERA" />
+<!--    <uses-permission-->
+<!--        android:name="android.permission.QUERY_ALL_PACKAGES"-->
+<!--        tools:ignore="QueryAllPackagesPermission" />-->
+<!--    <uses-permission android:name="android.permission.CAMERA" />-->
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <uses-feature
@@ -31,12 +32,13 @@
     <uses-feature
         android:name="android.hardware.touchscreen"
         android:required="false" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
-    <uses-feature
-        android:name="android.hardware.camera.autofocus"
-        android:required="false" />
+<!--    <uses-feature-->
+<!--        android:name="android.hardware.camera.autofocus"-->
+<!--        android:required="false" />-->
 
     <queries>
         <intent>
@@ -186,13 +188,13 @@
             android:name="io.nekohasekai.sagernet.ui.profile.ChainSettingsActivity"
             android:configChanges="uiMode" />
         <activity
-            android:name="moe.matsuri.nb4a.proxy.shadowtls.ShadowTLSSettingsActivity"
+            android:name="moe.matsuri.safeSurfing.proxy.shadowtls.ShadowTLSSettingsActivity"
             android:configChanges="uiMode" />
         <activity
-            android:name="moe.matsuri.nb4a.proxy.neko.NekoSettingActivity"
+            android:name="moe.matsuri.safeSurfing.proxy.neko.NekoSettingActivity"
             android:configChanges="uiMode" />
         <activity
-            android:name="moe.matsuri.nb4a.proxy.config.ConfigSettingActivity"
+            android:name="moe.matsuri.safeSurfing.proxy.config.ConfigSettingActivity"
             android:configChanges="uiMode" />
         <activity
             android:name="io.nekohasekai.sagernet.ui.GroupSettingsActivity"

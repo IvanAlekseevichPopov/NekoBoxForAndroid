@@ -2,7 +2,7 @@ package io.nekohasekai.sagernet.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import moe.matsuri.nb4a.utils.SendLog
+import moe.matsuri.safeSurfing.utils.SendLog
 
 class BlankActivity : AppCompatActivity() {
 

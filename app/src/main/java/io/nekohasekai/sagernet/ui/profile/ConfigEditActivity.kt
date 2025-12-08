@@ -18,7 +18,7 @@ import io.nekohasekai.sagernet.database.DataStore
 import io.nekohasekai.sagernet.databinding.LayoutEditConfigBinding
 import io.nekohasekai.sagernet.ktx.*
 import io.nekohasekai.sagernet.ui.ThemedActivity
-import moe.matsuri.nb4a.ui.ExtendedKeyboard
+import moe.matsuri.safeSurfing.ui.ExtendedKeyboard
 import org.json.JSONObject
 
 class ConfigEditActivity : ThemedActivity() {

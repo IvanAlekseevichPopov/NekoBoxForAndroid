@@ -1,7 +1,7 @@
 package io.nekohasekai.sagernet.fmt.ssh
 
-import moe.matsuri.nb4a.SingBoxOptions
-import moe.matsuri.nb4a.utils.listByLineOrComma
+import moe.matsuri.safeSurfing.SingBoxOptions
+import moe.matsuri.safeSurfing.utils.listByLineOrComma
 
 fun buildSingBoxOutboundSSHBean(bean: SSHBean): SingBoxOptions.Outbound_SSHOptions {
     return SingBoxOptions.Outbound_SSHOptions().apply {

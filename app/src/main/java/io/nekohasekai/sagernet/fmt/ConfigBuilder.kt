@@ -27,15 +27,15 @@ import io.nekohasekai.sagernet.fmt.wireguard.buildSingBoxOutboundWireguardBean
 import io.nekohasekai.sagernet.ktx.isIpAddress
 import io.nekohasekai.sagernet.ktx.mkPort
 import io.nekohasekai.sagernet.utils.PackageCache
-import moe.matsuri.nb4a.*
-import moe.matsuri.nb4a.SingBoxOptions.*
-import moe.matsuri.nb4a.plugin.Plugins
-import moe.matsuri.nb4a.proxy.config.ConfigBean
-import moe.matsuri.nb4a.proxy.shadowtls.ShadowTLSBean
-import moe.matsuri.nb4a.proxy.shadowtls.buildSingBoxOutboundShadowTLSBean
-import moe.matsuri.nb4a.utils.JavaUtil.gson
-import moe.matsuri.nb4a.utils.Util
-import moe.matsuri.nb4a.utils.listByLineOrComma
+import moe.matsuri.safeSurfing.*
+import moe.matsuri.safeSurfing.SingBoxOptions.*
+import moe.matsuri.safeSurfing.plugin.Plugins
+import moe.matsuri.safeSurfing.proxy.config.ConfigBean
+import moe.matsuri.safeSurfing.proxy.shadowtls.ShadowTLSBean
+import moe.matsuri.safeSurfing.proxy.shadowtls.buildSingBoxOutboundShadowTLSBean
+import moe.matsuri.safeSurfing.utils.JavaUtil.gson
+import moe.matsuri.safeSurfing.utils.Util
+import moe.matsuri.safeSurfing.utils.listByLineOrComma
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 
 const val TAG_MIXED = "mixed-in"

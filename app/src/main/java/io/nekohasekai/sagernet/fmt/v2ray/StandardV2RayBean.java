@@ -5,7 +5,7 @@ import com.esotericsoftware.kryo.io.ByteBufferOutput;
 
 import io.nekohasekai.sagernet.fmt.AbstractBean;
 import io.nekohasekai.sagernet.fmt.trojan.TrojanBean;
-import moe.matsuri.nb4a.utils.JavaUtil;
+import moe.matsuri.safeSurfing.utils.JavaUtil;
 
 public abstract class StandardV2RayBean extends AbstractBean {
 

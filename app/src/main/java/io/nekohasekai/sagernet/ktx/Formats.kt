@@ -14,11 +14,11 @@ import io.nekohasekai.sagernet.fmt.trojan.parseTrojan
 import io.nekohasekai.sagernet.fmt.tuic.parseTuic
 import io.nekohasekai.sagernet.fmt.trojan_go.parseTrojanGo
 import io.nekohasekai.sagernet.fmt.v2ray.parseV2Ray
-import moe.matsuri.nb4a.plugin.NekoPluginManager
-import moe.matsuri.nb4a.proxy.neko.NekoJSInterface
-import moe.matsuri.nb4a.proxy.neko.parseShareLink
-import moe.matsuri.nb4a.utils.JavaUtil.gson
-import moe.matsuri.nb4a.utils.Util
+import moe.matsuri.safeSurfing.plugin.NekoPluginManager
+import moe.matsuri.safeSurfing.proxy.neko.NekoJSInterface
+import moe.matsuri.safeSurfing.proxy.neko.parseShareLink
+import moe.matsuri.safeSurfing.utils.JavaUtil.gson
+import moe.matsuri.safeSurfing.utils.Util
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject

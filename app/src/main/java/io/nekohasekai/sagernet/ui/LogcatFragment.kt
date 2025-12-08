@@ -15,7 +15,7 @@ import io.nekohasekai.sagernet.R
 import io.nekohasekai.sagernet.databinding.LayoutLogcatBinding
 import io.nekohasekai.sagernet.ktx.*
 import libcore.Libcore
-import moe.matsuri.nb4a.utils.SendLog
+import moe.matsuri.safeSurfing.utils.SendLog
 
 class LogcatFragment : ToolbarFragment(R.layout.layout_logcat),
     Toolbar.OnMenuItemClickListener {

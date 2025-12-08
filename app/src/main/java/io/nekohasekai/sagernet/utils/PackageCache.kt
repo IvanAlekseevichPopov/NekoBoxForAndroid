@@ -10,7 +10,7 @@ import io.nekohasekai.sagernet.ktx.listenForPackageChanges
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
-import moe.matsuri.nb4a.plugin.Plugins
+import moe.matsuri.safeSurfing.plugin.Plugins
 import java.util.concurrent.atomic.AtomicBoolean
 
 object PackageCache {

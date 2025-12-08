@@ -6,9 +6,9 @@ import io.nekohasekai.sagernet.database.DataStore
 import io.nekohasekai.sagernet.fmt.http.HttpBean
 import io.nekohasekai.sagernet.fmt.trojan.TrojanBean
 import io.nekohasekai.sagernet.ktx.*
-import moe.matsuri.nb4a.SingBoxOptions.*
-import moe.matsuri.nb4a.utils.NGUtil
-import moe.matsuri.nb4a.utils.listByLineOrComma
+import moe.matsuri.safeSurfing.SingBoxOptions.*
+import moe.matsuri.safeSurfing.utils.NGUtil
+import moe.matsuri.safeSurfing.utils.listByLineOrComma
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import org.json.JSONObject

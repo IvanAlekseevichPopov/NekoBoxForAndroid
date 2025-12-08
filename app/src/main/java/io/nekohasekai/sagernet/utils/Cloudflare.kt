@@ -8,8 +8,8 @@ import io.nekohasekai.sagernet.utils.cf.DeviceResponse
 import io.nekohasekai.sagernet.utils.cf.RegisterRequest
 import io.nekohasekai.sagernet.utils.cf.UpdateDeviceRequest
 import libcore.Libcore
-import moe.matsuri.nb4a.utils.JavaUtil.gson
-import moe.matsuri.nb4a.utils.Util
+import moe.matsuri.safeSurfing.utils.JavaUtil.gson
+import moe.matsuri.safeSurfing.utils.Util
 
 // kang from wgcf
 object Cloudflare {

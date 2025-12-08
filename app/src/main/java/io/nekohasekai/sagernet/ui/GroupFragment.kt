@@ -27,8 +27,8 @@ import io.nekohasekai.sagernet.widget.ListHolderListener
 import io.nekohasekai.sagernet.widget.QRCodeDialog
 import io.nekohasekai.sagernet.widget.UndoSnackbarManager
 import kotlinx.coroutines.delay
-import moe.matsuri.nb4a.utils.Util
-import moe.matsuri.nb4a.utils.toBytesString
+import moe.matsuri.safeSurfing.utils.Util
+import moe.matsuri.safeSurfing.utils.toBytesString
 import java.lang.NumberFormatException
 import java.util.*
 

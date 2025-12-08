@@ -22,9 +22,9 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import libcore.Libcore
-import moe.matsuri.nb4a.Protocols
-import moe.matsuri.nb4a.utils.LibcoreUtil
-import moe.matsuri.nb4a.utils.Util
+import moe.matsuri.safeSurfing.Protocols
+import moe.matsuri.safeSurfing.utils.LibcoreUtil
+import moe.matsuri.safeSurfing.utils.Util
 import java.net.UnknownHostException
 
 class BaseService {
@@ -330,7 +330,8 @@ class BaseService {
             data.proxy = proxy
             BootReceiver.enabled = DataStore.persistAcrossReboot
             if (!data.closeReceiverRegistered) {
-                registerReceiver(data.receiver, IntentFilter().apply {
+
+                val filter = IntentFilter().apply {
                     addAction(Action.RELOAD)
                     addAction(Intent.ACTION_SHUTDOWN)
                     addAction(Action.CLOSE)
@@ -339,7 +340,12 @@ class BaseService {
                         addAction(PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED)
                     }
                     addAction(Action.RESET_UPSTREAM_CONNECTIONS)
-                }, "$packageName.SERVICE", null)
+                }
+                if (Build.VERSION.SDK_INT >= 33) {
+                    registerReceiver(data.receiver, filter, Context.RECEIVER_NOT_EXPORTED)
+                } else {
+                    registerReceiver(data.receiver, filter)
+                }
                 data.closeReceiverRegistered = true
             }
 

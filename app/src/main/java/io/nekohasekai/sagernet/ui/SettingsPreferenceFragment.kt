@@ -17,8 +17,8 @@ import io.nekohasekai.sagernet.database.preference.EditTextPreferenceModifiers
 import io.nekohasekai.sagernet.ktx.*
 import io.nekohasekai.sagernet.utils.Theme
 import io.nekohasekai.sagernet.widget.AppListPreference
-import moe.matsuri.nb4a.Protocols
-import moe.matsuri.nb4a.ui.*
+import moe.matsuri.safeSurfing.Protocols
+import moe.matsuri.safeSurfing.ui.*
 
 class SettingsPreferenceFragment : PreferenceFragmentCompat() {
 

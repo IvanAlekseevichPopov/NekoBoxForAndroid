@@ -21,10 +21,10 @@ import io.nekohasekai.sagernet.plugin.PluginManager
 import kotlinx.coroutines.*
 import libcore.BoxInstance
 import libcore.Libcore
-import moe.matsuri.nb4a.plugin.NekoPluginManager
-import moe.matsuri.nb4a.proxy.neko.NekoBean
-import moe.matsuri.nb4a.proxy.neko.NekoJSInterface
-import moe.matsuri.nb4a.proxy.neko.updateAllConfig
+import moe.matsuri.safeSurfing.plugin.NekoPluginManager
+import moe.matsuri.safeSurfing.proxy.neko.NekoBean
+import moe.matsuri.safeSurfing.proxy.neko.NekoJSInterface
+import moe.matsuri.safeSurfing.proxy.neko.updateAllConfig
 import org.json.JSONObject
 import java.io.File
 

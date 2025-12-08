@@ -11,10 +11,10 @@ import io.nekohasekai.sagernet.fmt.http.HttpBean
 import io.nekohasekai.sagernet.fmt.trojan.TrojanBean
 import io.nekohasekai.sagernet.fmt.v2ray.StandardV2RayBean
 import io.nekohasekai.sagernet.fmt.v2ray.VMessBean
-import moe.matsuri.nb4a.proxy.PreferenceBinding
-import moe.matsuri.nb4a.proxy.PreferenceBindingManager
-import moe.matsuri.nb4a.proxy.Type
-import moe.matsuri.nb4a.ui.SimpleMenuPreference
+import moe.matsuri.safeSurfing.proxy.PreferenceBinding
+import moe.matsuri.safeSurfing.proxy.PreferenceBindingManager
+import moe.matsuri.safeSurfing.proxy.Type
+import moe.matsuri.safeSurfing.ui.SimpleMenuPreference
 
 abstract class StandardV2RaySettingsActivity : ProfileSettingsActivity<StandardV2RayBean>() {
 

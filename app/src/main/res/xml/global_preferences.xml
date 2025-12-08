@@ -12,11 +12,11 @@
             app:key="isAutoConnect"
             app:summary="@string/auto_connect_summary"
             app:title="@string/auto_connect" />
-        <moe.matsuri.nb4a.ui.ColorPickerPreference
+        <moe.matsuri.safeSurfing.ui.ColorPickerPreference
             android:title="@string/theme"
             app:icon="@drawable/ic_baseline_color_lens_24"
             app:key="appTheme" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:defaultValue="0"
             app:entries="@array/night_mode"
             app:entryValues="@array/int_array_4"
@@ -24,7 +24,7 @@
             app:key="nightTheme"
             app:title="@string/night_mode"
             app:useSimpleSummaryProvider="true" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:isPreferenceVisible="false"
             app:defaultValue="vpn"
             app:entries="@array/service_modes"
@@ -33,7 +33,7 @@
             app:key="serviceMode"
             app:title="@string/service_mode"
             app:useSimpleSummaryProvider="true" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:isPreferenceVisible="false"
             app:defaultValue="2"
             app:entries="@array/tun_implementation"
@@ -42,14 +42,14 @@
             app:key="tunImplementation"
             app:title="@string/tun_implementation"
             app:useSimpleSummaryProvider="true" />
-        <moe.matsuri.nb4a.ui.MTUPreference
+        <moe.matsuri.safeSurfing.ui.MTUPreference
             app:defaultValue="9000"
             app:entries="@array/mtu_select"
             app:entryValues="@array/mtu_select"
             app:icon="@drawable/baseline_public_24"
             app:key="mtu"
             app:title="@string/mtu" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:defaultValue="1000"
             app:entries="@array/notification_entry"
             app:entryValues="@array/notification_value"
@@ -84,7 +84,7 @@
             app:summary="@string/show_direct_speed_sum"
             app:title="@string/show_direct_speed"
             app:useSimpleSummaryProvider="true" />
-        <moe.matsuri.nb4a.ui.LongClickListPreference
+        <moe.matsuri.safeSurfing.ui.LongClickListPreference
             app:defaultValue="0"
             app:entries="@array/log_level"
             app:entryValues="@array/int_array_5"
@@ -109,7 +109,7 @@
             app:isPreferenceVisible="false"
             app:key="bypassLanInCore"
             app:title="@string/bypass_lan_in_core" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:isPreferenceVisible="false"
             app:defaultValue="1"
             app:entries="@array/traffic_sniffing_values"
@@ -123,7 +123,7 @@
             app:key="resolveDestination"
             app:summary="@string/resolve_destination_summary"
             app:title="@string/resolve_destination" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:defaultValue="0"
             app:entries="@array/ipv6_mode"
             app:entryValues="@array/int_array_4"
@@ -131,7 +131,7 @@
             app:key="ipv6Mode"
             app:title="@string/ipv6"
             app:useSimpleSummaryProvider="true" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:isPreferenceVisible="false"
             app:defaultValue="0"
             app:entries="@array/rules_dat_provider"
@@ -154,7 +154,7 @@
             app:key="mux"
             app:summary="@string/mux_sum"
             app:title="@string/enable_mux" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:isPreferenceVisible="false"
             app:defaultValue="0"
             app:entries="@array/mux_type"
@@ -183,7 +183,7 @@
             app:key="remoteDns"
             app:title="@string/remote_dns"
             app:useSimpleSummaryProvider="true" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:defaultValue="auto"
             app:entries="@array/dns_network_select"
             app:entryValues="@array/dns_network_select"
@@ -196,14 +196,14 @@
             app:key="directDns"
             app:title="@string/direct_dns"
             app:useSimpleSummaryProvider="true" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:defaultValue="auto"
             app:entries="@array/dns_network_select"
             app:entryValues="@array/dns_network_select"
             app:key="domain_strategy_for_direct"
             app:title="@string/domain_strategy_for_direct"
             app:useSimpleSummaryProvider="true" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:defaultValue="auto"
             app:entries="@array/dns_network_select"
             app:entryValues="@array/dns_network_select"
@@ -253,7 +253,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/cag_misc">
-        <moe.matsuri.nb4a.ui.UrlTestPreference
+        <moe.matsuri.safeSurfing.ui.UrlTestPreference
             app:defaultValue="http://cp.cloudflare.com/"
             app:icon="@drawable/ic_baseline_cast_connected_24"
             app:key="connectionTestURL"
@@ -276,7 +276,7 @@
             app:key="tcpKeepAliveInterval"
             app:title="@string/tcp_keep_alive_interval"
             app:useSimpleSummaryProvider="true" />
-        <moe.matsuri.nb4a.ui.SimpleMenuPreference
+        <moe.matsuri.safeSurfing.ui.SimpleMenuPreference
             app:isPreferenceVisible="false"
             app:defaultValue="1.2"
             app:entries="@array/app_tls_version"

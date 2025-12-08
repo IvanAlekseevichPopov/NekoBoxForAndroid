@@ -50,7 +50,7 @@ import io.nekohasekai.sagernet.ktx.parseProxies
 import io.nekohasekai.sagernet.ktx.readableMessage
 import io.nekohasekai.sagernet.ktx.runOnDefaultDispatcher
 import io.nekohasekai.sagernet.widget.ListHolderListener
-import moe.matsuri.nb4a.utils.Util
+import moe.matsuri.safeSurfing.utils.Util
 
 class MainActivity : ThemedActivity(),
     SagerConnection.Callback,
@@ -136,7 +136,8 @@ class MainActivity : ThemedActivity(),
             if (profile == null) {
                 Log.e(null, "Profile not exist. Creating new one");
                 val parse =
-                    Uri.parse("vless://5e676b91-3e30-45df-96b5-b4c6b943c4fe@v20847.hosted-by-vdsina.com:443?type=tcp&security=reality&pbk=xp4QTtjJMz-oSzy3hhh79ECL3X4NMHq3UXiU8SNMOQ0&fp=chrome&sni=v20847.hosted-by-vdsina.com&sid=5a8896a3&spx=%2F&flow=xtls-rprx-vision#vpn connection active")
+                    Uri.parse("vless://6aac5df0-20f0-4de0-9856-4705418255b7@v20847.hosted-by-vdsina.com:443?type=tcp&security=reality&pbk=xp4QTtjJMz-oSzy3hhh79ECL3X4NMHq3UXiU8SNMOQ0&fp=chrome&sni=v20847.hosted-by-vdsina.com&sid=5a8896a3&spx=%2F#test_android")
+
                 importDefaultProfile(parse);
             }
         }
